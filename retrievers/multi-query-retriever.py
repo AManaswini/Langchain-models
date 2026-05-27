@@ -17,7 +17,7 @@ vector_store = FAISS.from_documents(
     embedding = embedding_model,
 )
 
-retriever2 = MultiQueryRetriever.from_llm(
+retriever = MultiQueryRetriever.from_llm(
     retriever = vectorstore.as_retriever(search_kwargs = {'k':2}),
     llm = ChatOpenAI(model = 'gpt-3')
 )
